@@ -1,0 +1,129 @@
+.about {
+  background-color: $color-gray-light;
+  letter-spacing: 0.055em;
+  @include lg-min {
+    padding-bottom: $gap * 5;
+    padding-top: $gap * 5;
+  }
+  @include lg-md {
+    padding-bottom: $gap * 4;
+    padding-top: $gap * 4;
+  }
+  @include md {
+    padding-bottom: $gap * 3;
+    padding-top: $gap * 3;
+  }
+
+  &__container {
+    @extend %container;
+    display: grid;
+    @include sm {
+      grid-gap: $gap;
+    }
+    @include lg-min {
+      grid-gap: $gap * 5;
+      grid-template-columns: 1fr 271px;
+    }
+    @include lg-md {
+      grid-gap: $gap * 2;
+      grid-template-columns: 1fr 271px;
+    }
+    @include md-sm {
+      grid-gap: $gap;
+      grid-template-columns: 1fr 236px;
+    }
+    @include sm {
+      grid-gap: $gap;
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &-content {
+    h2 {
+      margin-top: 0;
+    }
+
+    &__title {
+      letter-spacing: 0.1em;
+      color: $color-primary;
+      font-family: "Roboto Slab", serif;
+      line-height: 1.2em;
+      margin-top: 0;
+      display: block;
+      @include lg-min {
+        font-size: 2.5rem;
+        &:nth-of-type(2) {
+          margin-bottom: 56px;
+        }
+      }
+      @include lg-md {
+        font-size: 2rem;
+        &:nth-of-type(2) {
+          margin-bottom: 42px;
+        }
+      }
+      @include md-sm {
+        font-size: 1.5rem;
+        &:nth-of-type(2) {
+          margin-bottom: 36px;
+        }
+      }
+      @include sm {
+        font-size: 1.5rem;
+        text-align: center;
+        &:nth-of-type(2) {
+          margin-bottom: 36px;
+        }
+      }
+    }
+
+    p {
+      @include lg-min {
+        font-size: 1.125rem;
+      }
+
+      &:first-of-type::after {
+        position: absolute;
+        top: 0;
+        width: 2px;
+        height: 200px;
+        content: "";
+        background-color: rgba($color-gray, 0.1);
+        @include lg-min {
+          right: -50px;
+        }
+        @include lg-md {
+          right: -20px;
+        }
+        @include md-sm {
+          right: -10px;
+        }
+        @include sm {
+          display: none;
+        }
+      }
+
+      &:last-of-type {
+        margin: 0;
+      }
+
+      &:first-of-type {
+        position: relative;
+        margin-top: -5px;
+      }
+    }
+  }
+
+  &__image {
+    display: grid;
+    justify-items: center;
+    align-content: center;
+
+    img {
+      max-width: 100%;
+      max-height: 480px;
+    }
+  }
+}
+
+
